@@ -1,0 +1,7 @@
+<%= div_for problem do %>
+	<h1><%= problem.name %></h1><%= problem.url %>
+  <div>
+    <%= problem.description %></br>
+		By <%= problem.user.name %>
+  </div>
+	<% end %>
