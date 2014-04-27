@@ -1,10 +1,8 @@
 <%= div_for problem do %>
-	<h1><%= problem.name %></h1><%= problem.url %>
-  <div>
-    <%= problem.description %></br>
-		By <%= problem.user.name %>
-  </div>
-	<div> Total Score: <%= problem.cached_votes_score %></div>
-	<%= link_to 'Down', {:controller => 'problems', :action => 'down_vote'}, {:method => :post } %>
-	<%= link_to 'Up', {:controller => 'problems', :action => 'up_vote'}, {:method => :post } %>
+	<h2><%= problem.name %> (<%= problem.cached_votes_score %>)</h2>
+	<a =href"<%= problem.url %>"><%= problem.url %></a>
+    <p><%= problem.description %><p>
+		By <%= problem.user.name %></br>
+	<a class="button"<%= link_to 'Up', {:controller => 'problems', :action => 'up_vote'}, {:method => :post } %></a>
+	<a class="button"<%= link_to 'Down', {:controller => 'problems', :action => 'down_vote'}, {:method => :post } %></a>
 	<% end %>

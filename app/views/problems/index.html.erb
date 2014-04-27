@@ -1,10 +1,10 @@
-<%= form_for @problem.new, url: {action: "create"} do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :url %>
-  <%= f.text_area :description %>
-  <%= f.submit "Create" %>
-<% end %>
-<h1>Problems Wall</h1>
-<% @problem.each do |problem| %>
-	<div><%= link_to problem.name, problem %></div>
-<% end %>
+<div class="row">
+  <div class="large-6 columns">
+      <% @problem.each do |problem| %>
+        <h1><small><%= problem.cached_votes_score %></small> <%= link_to problem.name, problem %></h1>
+      <% end %>
+  </div>
+  <div class="large-6 columns">
+    <%= render "problems/new" %>
+  </div>
+</div>
