@@ -4,5 +4,7 @@
     <%= problem.description %></br>
 		By <%= problem.user.name %>
   </div>
-	<%= problem.votes.count %>
+	<div> Total Score: <%= problem.cached_votes_score %></div>
+	<%= link_to 'Down', {:controller => 'problems', :action => 'down_vote'}, {:method => :post } %>
+	<%= link_to 'Up', {:controller => 'problems', :action => 'up_vote'}, {:method => :post } %>
 	<% end %>

@@ -1,10 +1,12 @@
 class ProblemsController < ApplicationController
+  include Concerns::Votes
+
   def index
     @problem = Problem.all
   end
 
   def show
-    @problem = Problem.find(params[:id])
+    @problem = find_problem
   end
 
   def new
@@ -17,19 +19,11 @@ class ProblemsController < ApplicationController
      redirect_to @problem
   end
 
-  def up_vote
-    @problem = Problem.find(params[:id])
-    @problem.liked_by current_user
-    redirect_to @problem
-  end
-
-  def down_vote
-    @problem = Problem.find(params[:id])
-    @problem.downvote_from current_user
-    redirect_to @problem
-  end
-
   private
+
+  def find_problem
+    @problem = Problem.find(params[:id])
+  end
 
   def problem_params
     params.require(:problem).permit(:name, :description, :url)
