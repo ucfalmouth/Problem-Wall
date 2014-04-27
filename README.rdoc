@@ -1,28 +1,15 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a proof of concept app for the Educational Technology departments Problem Wall. This has not been developed using TDD.
 
-Things you may want to cover:
+Rails 4.1.0
+Ruby 2.0.0
 
-* Ruby version
+TODO
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+* Create Scope for ordering of Problems.
+* Set it so a User cannot vote if they have already voted for either Up or Down.
+* Create Solutions or Problems.
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
