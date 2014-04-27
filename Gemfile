@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 gem 'devise'
+gem 'acts_as_votable', '~> 0.8.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

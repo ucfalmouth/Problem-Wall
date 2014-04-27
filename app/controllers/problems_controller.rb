@@ -17,6 +17,18 @@ class ProblemsController < ApplicationController
      redirect_to @problem
   end
 
+  def up_vote
+    @problem = Problem.find(params[:id])
+    @problem.liked_by current_user
+    redirect_to @problem
+  end
+
+  def down_vote
+    @problem = Problem.find(params[:id])
+    @problem.downvote_from current_user
+    redirect_to @problem
+  end
+
   private
 
   def problem_params
