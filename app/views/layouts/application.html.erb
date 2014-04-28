@@ -14,7 +14,16 @@
   <body>
     <%= render "layouts/nav" %>
     <div class="row">
-      <div class="large-12 columns"><%= yield %></div>
+      <div class="large-3 columns">&nbsp;</div>
+      <div class="large-6 columns">
+        <% if flash[:notice] %>
+          <div data-alert class="alert-box success radius center"><%= flash[:notice] %></div>
+        <% end %>
+      </div>
+      <div class="large-3 columns">&nbsp;</div>
+      <div class="large-12 columns">
+        <%= yield %>
+      </div>
 </div>
 
     <%= javascript_include_tag "application" %>

@@ -1277,7 +1277,9 @@ $topbar-margin-bottom: 20px;
 // $range-slider-handle-round: $global-rounded;
 // $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);
 // $range-slider-handle-cursor: pointer;
-
+li.votes a {
+color: #999;
+}
 .signup-panel {
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -1305,6 +1307,6 @@ $topbar-margin-bottom: 20px;
 .signup-panel .button {
   margin-left: 35%;
 }
-    
+
 
 @import 'foundation';

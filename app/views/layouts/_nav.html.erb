@@ -11,8 +11,7 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <% if user_signed_in? %>
-      <li class="active"><a href="">Votes Cast: <%= current_user.votes.size %></a></li>
-
+      <li class="active"><%= link_to 'New Problem', new_problem_path%></a></li>
       <li class="has-dropdown">
         <a href="#"><%= current_user.name %></a>
         <% end %>

@@ -1,10 +1,9 @@
 <div class="row">
+  <div class="large-3 columns">&nbsp;</div>
   <div class="large-6 columns">
-      <% @problem.each do |problem| %>
-        <h1><small><%= problem.cached_votes_score %></small> <%= link_to problem.name, problem %></h1>
+      <% @problems.each do |problem| %>
+        <h1><%= link_to problem.name, problem %><small> <%= problem.cached_votes_score %></small></h1>
       <% end %>
   </div>
-  <div class="large-6 columns">
-    <%= render "problems/new" %>
-  </div>
+<div class="large-3 columns">&nbsp;</div>
 </div>
