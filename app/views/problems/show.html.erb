@@ -6,3 +6,17 @@
   <a class="small button"<%= link_to 'Vote Up', {:controller => 'problems', :action => 'up_vote'}, {:method => :post } %></a>
   <a class="small button"<%= link_to 'Vote Down', {:controller => 'problems', :action => 'down_vote'}, {:method => :post } %></a>
   <% end %>
+  <div class="large-6 columns">
+  <%= form_for [@problems, Solution.new] do |f| %>
+  <div class="large-12 columns">
+    <label>Solution</label>
+    <%= f.text_area :body, placeholder: "Add your Solution" %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
+      <%= f.submit "Add", class: "button" %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+  <%= render "solutions" %>

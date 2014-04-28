@@ -2,6 +2,7 @@ PW::Application.routes.draw do
   root to: 'problems#index', via: :get
   resources :problems do
     member do
+      resources :solutions
       post 'up_vote'
       post 'down_vote'
     end

@@ -1,0 +1,15 @@
+<% @problem.solutions.each do |solution| %>
+
+<div class="row">
+		<div class="large-6 columns testimonial">
+			<div class="quote">
+        <p><%= solution.body %></p>
+			</div>
+			<div class="student">
+				<div class="photo"> </div>
+				<p><%= solution.user.name %></p>
+				<p><%= time_ago_in_words(solution.created_at) %> </p>
+			</div>
+		</div>
+    <% end %>
+	</div>

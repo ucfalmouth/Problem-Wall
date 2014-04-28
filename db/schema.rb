@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140427142509) do
+ActiveRecord::Schema.define(version: 20140428132329) do
 
   create_table "problems", force: true do |t|
     t.string   "name"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 20140427142509) do
   add_index "problems", ["cached_votes_up"], name: "index_problems_on_cached_votes_up"
   add_index "problems", ["cached_weighted_score"], name: "index_problems_on_cached_weighted_score"
   add_index "problems", ["user_id"], name: "index_problems_on_user_id"
+
+  create_table "solutions", force: true do |t|
+    t.string   "body"
+    t.integer  "problem_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "solutions", ["problem_id"], name: "index_solutions_on_problem_id"
+  add_index "solutions", ["user_id"], name: "index_solutions_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name",                   default: "", null: false

@@ -6,6 +6,7 @@ class ProblemsController < ApplicationController
 
   def show
     @problem = find_problem
+    @solutions = @problem.solutions
   end
 
   def new
