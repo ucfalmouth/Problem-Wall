@@ -6,9 +6,9 @@
         <p><%= solution.body %></p>
 			</div>
 			<div class="student">
-				<div class="photo"> </div>
+				<div class="photo"></div>
 				<p><%= solution.user.name %></p>
-				<p><%= time_ago_in_words(solution.created_at) %> </p>
+				<p><%= time_ago_in_words(solution.created_at) %> ago </p>
 			</div>
 		</div>
     <% end %>
